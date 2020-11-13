@@ -27,7 +27,7 @@ public class QuokkaTest {
             Quokka testQuokka = new Quokka(quokkaName);
 
             //When
-            Quokka expected = testQuokka;
+            String expected = quokkaName;
             String actual = testQuokka.getName();
 
             Assert.assertEquals(expected, actual);

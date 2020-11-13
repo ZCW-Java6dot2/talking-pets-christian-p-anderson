@@ -25,7 +25,7 @@ public class CatTest {
         Cat testCat = new Cat(catName);
 
         //When
-        Cat expected = testCat;
+        String expected = catName;
         String actual = testCat.getName();
 
         Assert.assertEquals(expected, actual);

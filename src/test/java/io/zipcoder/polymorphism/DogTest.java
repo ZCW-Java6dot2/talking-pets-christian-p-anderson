@@ -25,7 +25,7 @@ public class DogTest {
         Dog testDog = new Dog(dogName);
 
         //When
-        Dog expected = testDog;
+        String expected = dogName;
         String actual = testDog.getName();
 
         Assert.assertEquals(expected, actual);

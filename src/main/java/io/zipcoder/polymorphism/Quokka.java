@@ -1,22 +1,19 @@
 package io.zipcoder.polymorphism;
 
-public class Quokka {
-    private String name;
+public class Quokka extends Pet {
 
-    public Quokka(){}
+
+    public Quokka(){
+        this(null);
+    }
+
     public Quokka(String name) {
-        this.name = name;
+        super(name);
     }
 
+    @Override
     public String speak() {
-        return null;
+        return "squeak!";
     }
 
-    public String getName() {
-        return null;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

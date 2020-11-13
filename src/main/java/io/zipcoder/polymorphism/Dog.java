@@ -1,26 +1,19 @@
 package io.zipcoder.polymorphism;
 
-public class Dog {
-    private String name;
+public class Dog extends Pet{
 
     public Dog(){
-        this.name = "";
+        this(null);
     }
 
     public Dog(String name){
-        this.name =  name;
+        super(name);
 
     }
 
+    @Override
     public String speak() {
-    return null;
+    return "bark!";
     }
 
-    public String getName() {
-        return null;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
