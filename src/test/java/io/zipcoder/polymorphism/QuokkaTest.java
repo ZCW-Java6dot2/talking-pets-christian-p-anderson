@@ -9,7 +9,7 @@ public class QuokkaTest {
         @Test
         public void speakTest(){
             //Given
-            Quokka testQuokka = new Quokka();
+            Quokka testQuokka = new Quokka("");
             String expected = "squeak!";
 
             //when
@@ -24,7 +24,7 @@ public class QuokkaTest {
         public void getQuokkaNameTest(){
             //Given
             String quokkaName = "binx";
-            Quokka testQuokka = new Quokka(quokkaName);
+            Quokka testQuokka = new Quokka("");
 
             //When
             String expected = quokkaName;
@@ -37,14 +37,13 @@ public class QuokkaTest {
         @Test
         public void setQuokkaNameTest(){
             //Given
-            String dogName = "portabella";
-            Quokka testQuokka = new Quokka();
+            Quokka testQuokka = new Quokka("");
 
             //When
             String expected = "portabella";
-            testQuokka.setName("portabella");
-            String actual = testQuokka.getName();
+            testQuokka.setName(expected);
 
+            String actual = testQuokka.getName();
             Assert.assertEquals(expected, actual);
 
         }

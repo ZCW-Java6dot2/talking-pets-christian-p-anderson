@@ -2,10 +2,7 @@ package io.zipcoder.polymorphism;
 
 public class Quokka extends Pet {
 
-
-    public Quokka(){
-        this(null);
-    }
+    private String name;
 
     public Quokka(String name) {
         super(name);

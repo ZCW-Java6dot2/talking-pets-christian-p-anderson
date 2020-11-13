@@ -1,62 +1,79 @@
 package io.zipcoder.polymorphism;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Engine {
 
-    public void runEngine(){
-        int numPets = 0;
-        String petName = "";
+    private int totalPets = 0;
+    private String petName = "";
+    private ArrayList<Pet> petInfo = new ArrayList<>();
 
+    public void runEngine() {
+        // create scanner for inputs
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the pet show!\n");
+        // get the number of pets
+        System.out.print("Welcome to the pet show!\n" + "How many pets do you have?\n");
 
-        Boolean keepOn = true;
+        totalPets = scanner.nextInt();
 
-        while(keepOn){
+        if (totalPets > 0) {
 
-            System.out.println("How many pets do you have?\n");
-            numPets = scanner.nextInt();
+            for (int i = 0; i < totalPets; i++) {
 
-            System.out.println("Please select the type of pet you have:\n"
-                    + "\n1: Dog"
-                    + "\n2: Cat"
-                    + "\n3: Quokka"
-                    + "\n4: Quit");
+                System.out.print("What kind of pet do you have?\n\n");
 
-            Integer input = scanner.nextInt();
+                System.out.print(" 1: Dog\n 2: Cat\n 3: Quokka\n Please make a selection: \n");
+                int petType = scanner.nextInt();
 
-            switch(input){
-                case 1:
-                    System.out.println("What's your dog's name?");
-                    petName = scanner.nextLine();
-                    break;
 
-                case 2:
-                    System.out.println("What's your cat's name?");
-                    petName = scanner.nextLine();
-                    break;
+                switch(petType) {
+                    case 1:
+                        System.out.print("What's your dog's name?\n");
+                        petName = scanner.next();
+                        scanner.nextLine();
+                        Dog dog = new Dog(petName);
+                        petInfo.add(dog);
+                        break;
 
-                case 3:
-                    System.out.println("What's your quokka's name?");
-                    petName = scanner.nextLine();
-                    break;
-                case 4:
-                    keepOn = false;
-                    System.out.println("Turning off. Goodbye!");
-                    break;
-                default:
-                    System.out.println("Please choose a number from the list.");
+                    case 2:
+                        System.out.print("What's your cat's name?\n");
+                        petName = scanner.next();
+                        scanner.nextLine();
+                        Cat cat = new Cat(petName);
+                        petInfo.add(cat);
+                        break;
+
+                    case 3:
+                        System.out.print("What's your quokka's name?\n");
+                        petName = scanner.next();
+                        scanner.nextLine();
+                        Quokka quokka = new Quokka(petName);
+                        petInfo.add(quokka);
+                        break;
+
+                    default:
+                        System.out.print("Sorry, we aren't tracking that kind of pet. Please select again \n");
+                        break;
+                }
+
             }
+
+
+            }
+        for (Pet pet : petInfo) {
+            System.out.println(pet.getName() + " says " + pet.speak());
+
 
         }
 
 
 
+
+
+
     }
-
-
-
 
 }
